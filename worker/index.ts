@@ -4,6 +4,7 @@ import handler from "vinext/server/app-router-entry";
 
 interface Env {
   ASSETS: Fetcher;
+  RESEND_API_KEY?: string;
   DB: D1Database;
   IMAGES: {
     input(stream: ReadableStream): {
@@ -19,6 +20,28 @@ interface ExecutionContext {
   passThroughOnException(): void;
 }
 
+// Preserve the search value and usefulness of the former WordPress URLs.
+// Trailing slashes and capitalization are normalized before this lookup.
+const LEGACY_REDIRECTS: Record<string, string> = {
+  "/products-and-services": "/#services",
+  "/products-services": "/#services",
+  "/natural-turf": "/#sod-gallery-title",
+  "/synthetic-turf": "/#synthetic-gallery-title",
+  "/grass-seeding-seed-products": "/#seeding",
+  "/grading-services": "/#grading",
+  "/seasoned-firewood": "/#firewood",
+  "/firewood": "/#firewood",
+  "/about-us": "/#story",
+  "/contact": "/#quote",
+  "/contact-us": "/#quote",
+  "/request-a-quote": "/#quote",
+  "/blog": "/#services",
+  "/watering-your-new-sod": "/#sod-gallery-title",
+  "/frequently-asked-questions-synthetic-turf": "/#synthetic-gallery-title",
+  "/tips-successful-grass-seeding": "/#seeding",
+  "/sports-field-renovation": "/#sod-gallery-title",
+};
+
 // Image security config. SVG sources with .svg extension auto-skip the
 // optimization endpoint on the client side (served directly, no proxy).
 // To route SVGs through the optimizer (with security headers), set
@@ -27,7 +50,19 @@ interface ExecutionContext {
 
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    (globalThis as typeof globalThis & { __MOTZ_RESEND_API_KEY__?: string }).__MOTZ_RESEND_API_KEY__ = env?.RESEND_API_KEY;
     const url = new URL(request.url);
+
+    if (request.method === "GET" || request.method === "HEAD") {
+      const normalizedPath = url.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+      const destination = LEGACY_REDIRECTS[normalizedPath];
+
+      if (destination) {
+        const redirectUrl = new URL(destination, url.origin);
+        redirectUrl.search = url.search;
+        return Response.redirect(redirectUrl, 301);
+      }
+    }
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
