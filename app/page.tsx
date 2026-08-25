@@ -693,7 +693,7 @@ export default function Home() {
 
         <div className="seeding-showcase">
           <figure className="seeding-main-image">
-            <img src="/motz/seeding/signature-seed-blend.png" alt="Motz team member carrying a bucket of Motz Signature Seed Blend" />
+            <img src="/motz/seeding/signature-seed-blend-20260825.png" alt="Motz team member carrying a bucket of Motz Signature Seed Blend" />
             <figcaption><span>01</span> Motz Signature Seed Blend</figcaption>
           </figure>
           <div className="seeding-detail-grid">
@@ -869,8 +869,8 @@ export default function Home() {
       <footer>
         <div className="footer-brand">
           <img
-            src="/motz/motz-official-logo.png"
-            alt="Motz Turf Farms, Ltd. — The Motz trusted name in turf."
+            src="/motz/motz-official-footer-20260825.png"
+            alt="Motz Turf Farms — The Motz trusted name in turf."
           />
         </div>
         <div className="footer-grid">
