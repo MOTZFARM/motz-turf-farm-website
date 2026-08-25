@@ -46,6 +46,10 @@ const historyPhotos = [
   { number: "04", tone: "vintage-color", src: "/motz/history/motz-roadside-sign-vintage.png", alt: "Vintage Motz Turf Farms roadside sign overlooking the farm", caption: "The Motz name takes root" },
   { number: "05", tone: "vintage-color", src: "/motz/history/motz-crew-sod-vintage.png", alt: "Motz crew member holding sections of turf during an installation", caption: "Built by the work" },
   { number: "06", tone: "vintage-color", src: "/motz/history/kentucky-speedway-turf-vintage.png", alt: "Motz Turf Farms installing turf at Kentucky Speedway", caption: "Turf on a bigger stage" },
+  { number: "07", tone: "modern-color", src: "/motz/history/motz-sod-delivery-truck-modern.png", alt: "Motz Turf Farms flatbed truck loaded with large rolls of sod", caption: "Delivering turf at scale" },
+  { number: "08", tone: "modern-color", src: "/motz/history/motz-big-roll-loader-modern.jpg", alt: "Motz team member transporting a large roll of sod at the farm", caption: "Moving every roll with care" },
+  { number: "09", tone: "modern-color", src: "/motz/history/motz-field-tractor-modern.jpg", alt: "Motz tractor working across a cultivated turf field", caption: "Growing today’s turf" },
+  { number: "10", tone: "modern-color", src: "/motz/history/motz-farm-sunset-modern.jpg", alt: "Motz tractor working the turf farm at sunset", caption: "The farm at work today" },
 ];
 
 const communityPhotos = [
@@ -422,7 +426,7 @@ export default function Home() {
         <div className="story-archive" aria-label="Motz Turf Farms business history">
           <div className="story-archive-intro">
             <span>FROM THE MOTZ ARCHIVE</span>
-            <p>The Motz story is best told through the work—from the earliest days on the farm to a growing team, larger projects and a name built to last.</p>
+            <p>From black-and-white beginnings through decades of growth and into the work of today, the Motz story is written in the fields, equipment and projects that built the name.</p>
           </div>
           <ol className="story-timeline" aria-label="Motz company history milestones">
             <li>
