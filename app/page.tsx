@@ -53,14 +53,14 @@ const historyPhotos = [
 ];
 
 const communityPhotos = [
-  { src: "/motz/community/supporting-local-families.jpg", alt: "Motz representative supporting the Light for Levi Foundation at a local golf outing", caption: "Supporting local families" },
   { src: "/motz/community/farm-bureau-scholarships.webp", alt: "Community members celebrating Hamilton County Farm Bureau scholarship recipients", caption: "Supporting local students" },
-  { src: "/motz/community/ama-ignite-community.webp", alt: "Motz team member holding an AMA Cincinnati Ignite sign encouraging others to go the extra mile", caption: "Going the extra mile" },
-  { src: "/motz/community/community-volunteer-team.webp", alt: "Motz family and community volunteers gathered during a donation event", caption: "Neighbors helping neighbors" },
-  { src: "/motz/community/community-donation-day.webp", alt: "Volunteers unloading supplies during a community donation effort", caption: "A community effort" },
   { src: "/motz/community/motz-community-event-booth.webp", alt: "University of Cincinnati Bearcat mascot visiting the Motz Turf Farms community event booth", caption: "Meeting our neighbors" },
+  { src: "/motz/community/community-donation-day.webp", alt: "Volunteers unloading supplies during a community donation effort", caption: "A community effort" },
+  { src: "/motz/community/community-volunteer-team.webp", alt: "Motz family and community volunteers gathered during a donation event", caption: "Neighbors helping neighbors" },
+  { src: "/motz/community/supporting-local-families.jpg", alt: "Motz representative supporting the Light for Levi Foundation at a local golf outing", caption: "Supporting local families" },
   { src: "/motz/community/clough-valley-carriage-parade.webp", alt: "Clough Valley Carriages wagon by Motz Turf Farms in a community parade", caption: "Clough Valley Carriages" },
   { src: "/motz/community/illuminated-community-carriage.webp", alt: "Horse-drawn carriage illuminated for an evening community celebration", caption: "Celebrating together" },
+  { src: "/motz/community/ama-ignite-community.webp", alt: "Motz team member holding an AMA Cincinnati Ignite sign encouraging others to go the extra mile", caption: "Going the extra mile" },
   { src: "/motz/community/horses-community-parade.webp", alt: "Pair of Motz horses pulling a carriage through a Cincinnati parade", caption: "Cincinnati traditions" },
 ];
 

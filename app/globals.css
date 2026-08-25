@@ -133,7 +133,7 @@ h2 em { font-family: var(--font-serif), Georgia, serif; font-weight: 400; }
 .community-photo figcaption span { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; color: #c4d82d; font-size: .52rem; }
 .community-photo-1, .community-photo-2, .community-photo-3, .community-photo-4, .community-photo-5, .community-photo-6, .community-photo-7, .community-photo-8, .community-photo-9 { grid-column: span 4; margin-top: 0; }
 .community-photo-1 img, .community-photo-2 img, .community-photo-3 img, .community-photo-4 img, .community-photo-5 img, .community-photo-6 img, .community-photo-7 img, .community-photo-8 img, .community-photo-9 img { aspect-ratio: 1.08; }
-.community-photo-1 img, .community-photo-3 img, .community-photo-6 img { object-position: center 28%; }
+.community-photo-2 img, .community-photo-5 img, .community-photo-8 img { object-position: center 28%; }
 
 .services { background: var(--green); color: white; }
 .section-head { display: grid; grid-template-columns: 24% 1fr 30%; gap: 2rem; align-items: end; }
