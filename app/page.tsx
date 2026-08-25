@@ -317,6 +317,7 @@ export default function Home() {
       analyticsWindow.gtag?.("event", "generate_lead", {
         form_name: "get_a_quote",
         service: typeof payload.service === "string" ? payload.service : "not_selected",
+        project_size: typeof payload.projectSize === "string" ? payload.projectSize : "not_selected",
       });
 
       formElement.reset();
@@ -835,7 +836,25 @@ export default function Home() {
               </select>
             </label>
           </div>
-          <label>Tell us what you need<textarea required name="details" rows={4} placeholder="Project size, access, delivery quantity, timing or anything else that would help us prepare." /></label>
+          <fieldset className="project-size-fieldset">
+            <legend>Approximately how large is your project area?</legend>
+            <div className="project-size-options">
+              <label className="project-size-option">
+                <input required type="radio" name="projectSize" value="Small job — Under 2,500 sq. ft." />
+                <span><strong>Small job — Under 2,500 sq. ft.</strong><small>Up to approximately half of a regulation basketball court.</small></span>
+              </label>
+              <label className="project-size-option">
+                <input required type="radio" name="projectSize" value="Medium job — 2,500–10,000 sq. ft." />
+                <span><strong>Medium job — 2,500–10,000 sq. ft.</strong><small>Approximately half of a basketball court to two full courts.</small></span>
+              </label>
+              <label className="project-size-option">
+                <input required type="radio" name="projectSize" value="Large job — Over 10,000 sq. ft." />
+                <span><strong>Large job — Over 10,000 sq. ft.</strong><small>Larger than two basketball courts—or approximately a quarter acre and up.</small></span>
+              </label>
+            </div>
+            <p className="project-size-help"><strong>Not sure?</strong> Choose your closest estimate. Our team can measure the area during your consultation.</p>
+          </fieldset>
+          <label>Tell us what you need<textarea required name="details" rows={4} placeholder="Site access, goals, delivery quantity or anything else that would help us prepare." /></label>
           <label className="consent"><input required type="checkbox" /> <span>I agree that Motz Turf Farms may contact me about this project.</span></label>
           <button className="submit-button" type="submit" disabled={formStatus === "submitting"}>
             {formStatus === "submitting" ? "Sending…" : "Send project details"} <span><ArrowUpRightIcon /></span>

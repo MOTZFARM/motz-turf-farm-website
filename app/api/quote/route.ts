@@ -6,6 +6,11 @@ const RECIPIENTS = {
 };
 const FROM = "Motz Turf Farms <quotes@notifications.motzfarm.com>";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PROJECT_SIZES = new Set([
+  "Small job — Under 2,500 sq. ft.",
+  "Medium job — 2,500–10,000 sq. ft.",
+  "Large job — Over 10,000 sq. ft.",
+]);
 
 function clean(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
@@ -40,10 +45,11 @@ export async function POST(request: Request) {
     address: clean(body.address, 240),
     service: clean(body.service, 120),
     timeline: clean(body.timeline, 80),
+    projectSize: clean(body.projectSize, 120),
     details: clean(body.details, 4000),
   };
 
-  if (!quote.firstName || !quote.lastName || !EMAIL_PATTERN.test(quote.email) || !quote.phone || !quote.address || !quote.service || !quote.timeline || !quote.details) {
+  if (!quote.firstName || !quote.lastName || !EMAIL_PATTERN.test(quote.email) || !quote.phone || !quote.address || !quote.service || !quote.timeline || !PROJECT_SIZES.has(quote.projectSize) || !quote.details) {
     return Response.json({ error: "Please complete every required field." }, { status: 400 });
   }
 
@@ -67,7 +73,7 @@ export async function POST(request: Request) {
       <h1 style="margin:0 0 24px;font-size:28px">${escapeHtml(name)} requested a quote</h1>
       <table role="presentation" style="border-collapse:collapse;width:100%">
         ${field("Email", quote.email)}${field("Phone", quote.phone)}${field("Project address", quote.address)}
-        ${field("Service", quote.service)}${field("Ideal timing", quote.timeline)}${field("Submitted", submittedAt)}
+        ${field("Service", quote.service)}${field("Project size", quote.projectSize)}${field("Ideal timing", quote.timeline)}${field("Submitted", submittedAt)}
       </table>
       <div style="margin-top:22px;padding:20px;background:#f4f5ef;border-left:4px solid #b89018">
         <p style="margin:0 0 8px;color:#5b665f;font-size:13px">Project details</p>
@@ -83,6 +89,7 @@ export async function POST(request: Request) {
       <p style="font-size:16px;line-height:1.7">Hi ${escapeHtml(quote.firstName)}, thank you for telling us about your ${escapeHtml(quote.service.toLowerCase())} project. A member of our Cincinnati team will review the details and follow up with you.</p>
       <div style="margin:24px 0;padding:18px 20px;background:#f4f5ef;border-left:4px solid #b89018">
         <strong>Project address</strong><br />${escapeHtml(quote.address)}<br /><br />
+        <strong>Approximate project size</strong><br />${escapeHtml(quote.projectSize)}<br /><br />
         <strong>Ideal timing</strong><br />${escapeHtml(quote.timeline)}
       </div>
       <p style="font-size:15px;line-height:1.6">Need to add something? Call us at <a href="tel:+15132314844" style="color:#173c2b;font-weight:700">513-231-4844</a> or reply to this email.</p>
