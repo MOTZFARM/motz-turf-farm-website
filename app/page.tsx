@@ -41,14 +41,11 @@ const services = [
 ];
 
 const historyPhotos = [
-  { src: "/motz/history/joe-with-motz-truck.webp", alt: "Joe Motz standing beside an early Motz lawn care truck", caption: "The Motz name on the road" },
-  { src: "/motz/history/working-the-sod-farm.webp", alt: "Motz family members working with rolls of freshly harvested sod", caption: "Working the farm" },
-  { src: "/motz/history/early-years-tractor.webp", alt: "A member of the Motz family driving an early John Deere tractor", caption: "The early years" },
-  { src: "/motz/history/motz-family-generations.webp", alt: "Three generations of the Motz family together", caption: "Family, always" },
-  { src: "/motz/history/motz-family-outdoors.webp", alt: "Motz family members spending time together outdoors", caption: "Beyond the farm" },
-  { src: "/motz/history/hands-on-turf-work.webp", alt: "Motz team member demonstrating hands-on synthetic turf installation", caption: "Hands-on expertise" },
-  { src: "/motz/history/motz-next-generation.webp", alt: "Two generations of Motz Turf Farms team members", caption: "The next generation" },
-  { src: "/motz/history/motz-family-portrait.webp", alt: "Historic portrait of a Motz family elder", caption: "A foundation built to last" },
+  { number: "02", tone: "monochrome", src: "/motz/history/working-the-sod-farm.webp", alt: "Early Motz crew members working with rolls of freshly harvested sod", caption: "Working the farm" },
+  { number: "03", tone: "monochrome", src: "/motz/history/early-years-tractor.webp", alt: "Early Motz team member driving a John Deere tractor", caption: "The early years" },
+  { number: "04", tone: "vintage-color", src: "/motz/history/motz-roadside-sign-vintage.png", alt: "Vintage Motz Turf Farms roadside sign overlooking the farm", caption: "The Motz name takes root" },
+  { number: "05", tone: "vintage-color", src: "/motz/history/motz-crew-sod-vintage.png", alt: "Motz crew member holding sections of turf during an installation", caption: "Built by the work" },
+  { number: "06", tone: "vintage-color", src: "/motz/history/kentucky-speedway-turf-vintage.png", alt: "Motz Turf Farms installing turf at Kentucky Speedway", caption: "Turf on a bigger stage" },
 ];
 
 const communityPhotos = [
@@ -422,10 +419,10 @@ export default function Home() {
             <a className="round-link" href="#quote" aria-label="Start a project">Start<br />a project <span><ArrowUpRightIcon /></span></a>
           </div>
         </div>
-        <div className="story-archive" aria-label="Motz Turf Farms family history">
+        <div className="story-archive" aria-label="Motz Turf Farms business history">
           <div className="story-archive-intro">
-            <span>FROM THE FAMILY ARCHIVE</span>
-            <p>The modern Motz story took shape through steady, thoughtful growth—always grounded in hands-on care and a commitment to doing the job right.</p>
+            <span>FROM THE MOTZ ARCHIVE</span>
+            <p>The Motz story is best told through the work—from the earliest days on the farm to a growing team, larger projects and a name built to last.</p>
           </div>
           <ol className="story-timeline" aria-label="Motz company history milestones">
             <li>
@@ -443,11 +440,11 @@ export default function Home() {
           </ol>
           <div className="story-photo-grid">
             {historyPhotos.map((photo, index) => (
-              <figure className={`story-photo story-photo-${index + 1}`} key={photo.src}>
+              <figure className={`story-photo story-photo-${index + 1} story-photo-${photo.tone}`} key={photo.src}>
                 <div className="story-photo-frame">
                   <img src={photo.src} alt={photo.alt} loading="lazy" />
                 </div>
-                <figcaption><span>{String(index + 1).padStart(2, "0")}</span>{photo.caption}</figcaption>
+                <figcaption><span>{photo.number}</span>{photo.caption}</figcaption>
               </figure>
             ))}
           </div>
