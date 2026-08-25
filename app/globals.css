@@ -155,6 +155,8 @@ h2 em { font-family: var(--font-serif), Georgia, serif; font-weight: 400; }
 .community-photo-7 img { aspect-ratio: 1.34; }
 .community-photo-8 { grid-column: span 4; margin-top: 4.5rem; }
 .community-photo-8 img { aspect-ratio: .75; }
+.community-photo-9 { grid-column: span 4; margin-top: 1.25rem; }
+.community-photo-9 img { aspect-ratio: .75; }
 
 .services { background: var(--green); color: white; }
 .section-head { display: grid; grid-template-columns: 24% 1fr 30%; gap: 2rem; align-items: end; }
@@ -462,7 +464,7 @@ footer { background: #071c14; color: white; padding: 5rem 6.7vw 2rem; }
   .community-feature { grid-template-columns: 1fr; }
   .community-feature figcaption { min-height: 320px; border-top: 1px solid rgba(255,255,255,.25); border-left: 0; }
   .community-gallery-intro { grid-template-columns: 1fr 2fr; gap: 2rem; }
-  .community-photo-1, .community-photo-3, .community-photo-5, .community-photo-8 { grid-column: span 4; }
+  .community-photo-1, .community-photo-3, .community-photo-5, .community-photo-8, .community-photo-9 { grid-column: span 4; }
   .community-photo-2, .community-photo-4, .community-photo-6, .community-photo-7 { grid-column: span 6; }
   .community-photo-8 { grid-column: span 4; }
   .service-grid { grid-template-columns: 1fr; }
@@ -568,8 +570,8 @@ footer { background: #071c14; color: white; padding: 5rem 6.7vw 2rem; }
   .community-gallery-intro { grid-template-columns: 1fr; gap: 1rem; margin: 4rem 5vw 2rem; }
   .community-photo-grid { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82vw; gap: .65rem; padding: 0 5vw 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .community-photo-grid::-webkit-scrollbar { display: none; }
-  .community-photo-1, .community-photo-2, .community-photo-3, .community-photo-4, .community-photo-5, .community-photo-6, .community-photo-7, .community-photo-8 { grid-column: auto; margin-top: 0; scroll-snap-align: center; }
-  .community-photo-1 img, .community-photo-2 img, .community-photo-3 img, .community-photo-4 img, .community-photo-5 img, .community-photo-6 img, .community-photo-7 img, .community-photo-8 img { height: 300px; aspect-ratio: auto; }
+  .community-photo-1, .community-photo-2, .community-photo-3, .community-photo-4, .community-photo-5, .community-photo-6, .community-photo-7, .community-photo-8, .community-photo-9 { grid-column: auto; margin-top: 0; scroll-snap-align: center; }
+  .community-photo-1 img, .community-photo-2 img, .community-photo-3 img, .community-photo-4 img, .community-photo-5 img, .community-photo-6 img, .community-photo-7 img, .community-photo-8 img, .community-photo-9 img { height: 300px; aspect-ratio: auto; }
   .community-photo figcaption { right: .7rem; bottom: .7rem; left: .7rem; font-size: .5rem; letter-spacing: .07em; }
   .community-photo figcaption span { width: 24px; height: 24px; }
   .service-card, .service-card:last-child:nth-child(odd) { min-height: 370px; }

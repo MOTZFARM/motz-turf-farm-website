@@ -61,6 +61,7 @@ const communityPhotos = [
   { src: "/motz/community/community-donation-day.webp", alt: "Volunteers unloading supplies during a community donation effort", caption: "A community effort" },
   { src: "/motz/community/horses-community-parade.webp", alt: "Pair of Motz horses pulling a carriage through a Cincinnati parade", caption: "Cincinnati traditions" },
   { src: "/motz/community/motz-community-event-booth.webp", alt: "University of Cincinnati Bearcat mascot visiting the Motz Turf Farms community event booth", caption: "Meeting our neighbors" },
+  { src: "/motz/community/supporting-local-families.jpg", alt: "Motz representative supporting the Light for Levi Foundation at a local golf outing", caption: "Supporting local families" },
 ];
 
 type GalleryPhoto = {
