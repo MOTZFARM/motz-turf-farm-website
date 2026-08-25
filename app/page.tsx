@@ -762,7 +762,7 @@ export default function Home() {
 
       <section className="numbers">
         <div className="number-card"><span>01 · EXPERIENCE</span><strong>60+</strong><p>years serving Greater Cincinnati</p></div>
-        <div className="number-card"><span>02 · LOCAL</span><strong>60+</strong><p>years of local experience</p></div>
+        <div className="number-card"><span>02 · SERVICES</span><strong>5</strong><p>core services for your property</p></div>
         <div className="number-card"><span>03 · PROMISE</span><strong>1</strong><p>team from consultation to installation</p></div>
       </section>
 
