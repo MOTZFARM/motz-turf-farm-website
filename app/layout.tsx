@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase,
     title: "Motz Turf Farms | Cincinnati Sod & Turf Experts",
-    description: "Family-owned for over 60 years. Natural sod, synthetic turf installation and professional seeding across Greater Cincinnati.",
+    description: "Locally owned for over 60 years. Natural sod, synthetic turf installation and professional seeding across Greater Cincinnati.",
     icons: {
       icon: [{ url: "/motz/motz-avi-logo.png", type: "image/png" }],
       apple: "/motz/motz-avi-logo.png",

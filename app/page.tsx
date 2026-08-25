@@ -45,7 +45,7 @@ const historyPhotos = [
   { number: "03", tone: "monochrome", src: "/motz/history/early-years-tractor.webp", alt: "Early Motz team member driving a John Deere tractor", caption: "The early years" },
   { number: "04", tone: "vintage-color", src: "/motz/history/motz-roadside-sign-vintage.png", alt: "Vintage Motz Turf Farms roadside sign overlooking the farm", caption: "The Motz name takes root" },
   { number: "05", tone: "vintage-color", src: "/motz/history/motz-crew-sod-vintage.png", alt: "Motz crew member holding sections of turf during an installation", caption: "Built by the work" },
-  { number: "06", tone: "vintage-color", src: "/motz/history/kentucky-speedway-turf-vintage.png", alt: "Motz Turf Farms installing turf at Kentucky Speedway", caption: "Turf on a bigger stage" },
+  { number: "06", tone: "vintage-color", src: "/motz/history/kentucky-speedway-turf-vintage.png", alt: "Motz Turf Farms installing turf at Kentucky Speedway", caption: "Installing turf at Kentucky Speedway" },
   { number: "07", tone: "modern-color", src: "/motz/history/motz-sod-delivery-truck-modern.png", alt: "Motz Turf Farms flatbed truck loaded with large rolls of sod", caption: "Delivering turf at scale" },
   { number: "08", tone: "modern-color", src: "/motz/history/motz-big-roll-loader-modern.jpg", alt: "Motz team member transporting a large roll of sod at the farm", caption: "Moving every roll with care" },
   { number: "09", tone: "modern-color", src: "/motz/history/motz-field-tractor-modern.jpg", alt: "Motz tractor working across a cultivated turf field", caption: "Growing today’s turf" },
@@ -405,7 +405,7 @@ export default function Home() {
       </section>
 
       <section className="marquee" aria-label="Motz services">
-        <div>FARM GROWN <i>✦</i> PROFESSIONALLY INSTALLED <i>✦</i> FIREWOOD DELIVERED <i>✦</i> CINCINNATI PROUD <i>✦</i> FAMILY OWNED</div>
+        <div>FARM GROWN <i>✦</i> PROFESSIONALLY INSTALLED <i>✦</i> FIREWOOD DELIVERED <i>✦</i> CINCINNATI PROUD <i>✦</i> FIELDS CULTIVATED <i>✦</i> SITES PREPARED</div>
       </section>
 
       <section className="intro section-pad" id="story">
@@ -416,7 +416,7 @@ export default function Home() {
           </figure>
         </div>
         <div className="intro-copy">
-          <p className="eyebrow">One family. Three generations. Six decades.</p>
+          <p className="eyebrow">Built over generations, carried forward with purpose.</p>
           <h2>We don’t just install turf. <em>We stand behind it.</em></h2>
           <div className="intro-bottom">
             <p>Motz Turf Farms has helped Cincinnati grow greener for more than 60 years. Our turf is cultivated in rich river soil, our recommendations come from experience, and our name goes on every job.</p>
@@ -425,7 +425,7 @@ export default function Home() {
         </div>
         <div className="story-archive" aria-label="Motz Turf Farms business history">
           <div className="story-archive-intro">
-            <span>FROM THE MOTZ ARCHIVE</span>
+            <span>THE STORY OF MOTZ</span>
             <p>From black-and-white beginnings through decades of growth and into the work of today, the Motz story is written in the fields, equipment and projects that built the name.</p>
           </div>
           <ol className="story-timeline" aria-label="Motz company history milestones">
@@ -761,7 +761,7 @@ export default function Home() {
 
       <section className="numbers">
         <div className="number-card"><span>01 · EXPERIENCE</span><strong>60+</strong><p>years serving Greater Cincinnati</p></div>
-        <div className="number-card"><span>02 · LOCAL</span><strong>3</strong><p>generations of family ownership</p></div>
+        <div className="number-card"><span>02 · LOCAL</span><strong>60+</strong><p>years of local experience</p></div>
         <div className="number-card"><span>03 · PROMISE</span><strong>1</strong><p>team from consultation to installation</p></div>
       </section>
 
@@ -873,7 +873,7 @@ export default function Home() {
           />
         </div>
         <div className="footer-grid">
-          <div><p>THE TRUSTED NAME IN TURF</p><span>Family owned · Cincinnati rooted</span></div>
+          <div><p>THE TRUSTED NAME IN TURF</p><span>Locally owned · Cincinnati rooted</span></div>
           <div><p>VISIT</p><a href="https://maps.google.com/?q=6280+Clough+Pike+Cincinnati+OH+45244">6280 Clough Pike<br />Cincinnati, OH 45244</a></div>
           <div><p>CONTACT</p><a href="tel:+15132314844">513-231-4844</a><a href="mailto:info@motzfarm.com">info@motzfarm.com</a></div>
           <div><p>FOLLOW</p><a href="https://www.facebook.com/MotzTurfFarm/">Facebook <ArrowUpRightIcon /></a><a href="https://www.instagram.com/motzturffarm/">Instagram <ArrowUpRightIcon /></a><a href="https://www.youtube.com/@motzturffarm/featured">YouTube <ArrowUpRightIcon /></a><a href="#top">Back to top ↑</a></div>
