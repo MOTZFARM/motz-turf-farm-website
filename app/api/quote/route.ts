@@ -56,8 +56,26 @@ export async function POST(request: Request) {
   const runtimeGlobal = globalThis as typeof globalThis & { __MOTZ_RESEND_API_KEY__?: string };
   const resendApiKey = runtimeGlobal.__MOTZ_RESEND_API_KEY__ || process.env.RESEND_API_KEY;
   if (!resendApiKey) {
-    console.error("RESEND_API_KEY is not configured");
-    return Response.json({ error: "Email delivery is not configured yet." }, { status: 503 });
+    // The existing Cloudflare Worker retains the production Resend secret. Keep
+    // email delivery centralized there while the public website runs on Sites.
+    try {
+      const deliveryResponse = await fetch(
+        "https://motz-turf-farm.motzturffarm.workers.dev/api/quote",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(quote),
+        },
+      );
+
+      return new Response(deliveryResponse.body, {
+        status: deliveryResponse.status,
+        headers: { "Content-Type": deliveryResponse.headers.get("Content-Type") || "application/json" },
+      });
+    } catch (error) {
+      console.error("Quote delivery service is unavailable", error);
+      return Response.json({ error: "We could not send your request. Please call 513-231-4844." }, { status: 502 });
+    }
   }
 
   const name = `${quote.firstName} ${quote.lastName}`;
